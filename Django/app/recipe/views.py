@@ -52,7 +52,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
         if ingredients:
             ingredient_ids = self._params_to_ints(ingredients)
             print(ingredient_ids)
-            self.queryset = queryset.filter(ingredients__id__in=ingredient_ids)
+            self.queryset = queryset.filter(ingredients__name__in=ingredients)
 
 
         return self.queryset
